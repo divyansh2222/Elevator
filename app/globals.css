@@ -7,15 +7,27 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Tailwind classes for button states */
+.call {
+  background-color: #1d4ed8; /* Blue for 'call' state */
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.waiting {
+  background-color: #fbbf24; /* Yellow for 'waiting' state */
+}
+
+.arrived {
+  background-color: #10b981; /* Green for 'arrived' state */
+}
+/* Assuming this is your container that holds the elevator */
+.elevator-container {
+  position: relative;
+  height: 500px; /* Adjust this as needed */
+}
+
+/* Elevator styles for bottom-to-top movement */
+.elevator {
+  position: absolute;
+  bottom: 0; /* Initially, the elevator starts at the bottom */
+  transition: bottom 0.5s ease-in-out; /* Smooth transition */
 }
